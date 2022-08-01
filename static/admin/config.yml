@@ -1,18 +1,38 @@
+site_url: https://tourmaline-clafoutis-8f53da.netlify.app
+
 backend:
   name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
-media_folder: static/img
-public_folder: /img
+
+media_library:
+  name: uploadcare
+  config:
+    publicKey: 7b24509310ddb9c7d9fb
+
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'content/blog'
-    create: true
+  - name: 'guide'
+    label: 'Guide'
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    folder: 'content/guides'
+    path: '{{slug}}/{{slug}}'
+    media_folder: ''
+    public_folder: ''
+    create: true
     editor:
       preview: false
     fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'guide' }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Cover Image', name: 'coverImage', widget: 'image' }
+      - label: 'Sections'
+        name: 'sections'
+        widget: 'list'
+        fields:
+          - { label: 'Heading', name: 'heading', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+          - label: 'Image Steps'
+            name: 'imageSteps'
+            widget: 'list'
+            fields:
+              - { label: 'Image', name: 'image', widget: 'image' }
+              - { label: 'Heading', name: 'heading', widget: 'string' }
+              - { label: 'Paragraph', name: 'paragraph', widget: 'text', required: false }
