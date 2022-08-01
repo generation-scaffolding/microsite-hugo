@@ -13,7 +13,7 @@ collections:
     label: 'Guide'
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     folder: 'content/guides'
-    path: '{{slug}}/{{slug}}'
+    path: '{{slug}}/_index'
     media_folder: ''
     public_folder: ''
     create: true
