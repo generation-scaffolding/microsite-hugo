@@ -17,23 +17,35 @@
         label: "Image Grid",
         fields: [
             {
-                name: "image_src",
-                label: "Image",
-                widget: "image"
-            },
+                name: "srcset",
+                label: "Images",
+                widget: "image",
+                media_library: {
+                  config: {
+                    multiple: true
+                  }
+                }
+            }
         ],
-        pattern: /{{< imagegrid src="(.*?)" title="(.*?)" >}}/,
+        pattern: /{{<imagegrid srcset="([^\n]+)" >}}/,
         fromBlock: function(match) {
             return {
-                title: match[1],
-                src: match[2],
+                srcset: match[1],
             };
         },
         toBlock: function(obj) {
-            return `{{< imagegrid src="${obj.src}" title="${obj.title}" >}}`;
+          let srcList = "";
+          if(obj.srcset > 0) {
+            for(let i = 0; i < obj.srcset.length; i++) {
+              srcList += `"${obj.srcset[i]}"`
+            }
+
+            return `{{< imagegrid ${obj.srcset} >}}`;
+          }
+          return;
         },
         toPreview: function(obj) {
-            return `<img src=${obj.src} alt=${obj.title} />`;
+          return `<img src=${obj.srcset[0]} />`;
         },
       });
     </script>

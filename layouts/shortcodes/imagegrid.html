@@ -1,1 +1,6 @@
-<img src="{{ .Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"{{ end }} />
+<div class="">
+  <!-- <p>{{ $.Params.srcset }}</p> -->
+  <!-- {{ range .Params.srcset }}
+    <img src="{{ .Get 0 }}" alt="">
+  {{ end }} -->
+</div>
