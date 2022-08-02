@@ -7,5 +7,7 @@ sections:
     body: |-
       bar
 
+      cheese on toast
+
       {{< imagegrid src="undefined" title="undefined" >}}
 ---
