@@ -7,5 +7,7 @@ sections:
     body: |-
       cheese on toast
 
-      {{< imagegrid src="undefined" title="undefined" >}}
+      a chicken crossed the road
+
+      {{< imagegrid src="undefined" title="a little grey cabin" >}}
 ---
