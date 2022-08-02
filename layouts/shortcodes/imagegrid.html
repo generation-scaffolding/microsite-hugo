@@ -1,6 +1,5 @@
-<div class="">
-  <!-- <p>{{ $.Params.srcset }}</p> -->
-  <!-- {{ range .Params.srcset }}
-    <img src="{{ .Get 0 }}" alt="">
-  {{ end }} -->
+<div class="imageGrid">
+  {{ range .Params }}
+    <img src="{{ . }}" alt="">
+  {{ end }}
 </div>

@@ -35,14 +35,13 @@
         },
         toBlock: function(obj) {
           let srcList = "";
-          if(obj.srcset > 0) {
+          if(obj.srcset !== undefined) {
             for(let i = 0; i < obj.srcset.length; i++) {
-              srcList += `"${obj.srcset[i]}"`
+              if(i > 0) srcList += " ";
+              srcList += `\"${obj.srcset[i]}\"`;
             }
-
-            return `{{< imagegrid ${obj.srcset} >}}`;
           }
-          return;
+          return `{{< imagegrid ${srcList} >}}`;
         },
         toPreview: function(obj) {
           return `<img src=${obj.srcset[0]} />`;

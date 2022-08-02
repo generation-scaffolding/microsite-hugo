@@ -10,7 +10,6 @@ media_library:
     imagesOnly: true
   settings:
     autoFilename: false
-    defaultOperations: '/resize/800x600/'
 
 collections:
   - name: 'guide'

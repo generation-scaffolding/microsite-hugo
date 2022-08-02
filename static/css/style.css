@@ -424,6 +424,10 @@ table td{
   overflow:hidden;
 }
 
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 
 @media only screen and (min-width: 500px){
   body>main,
