@@ -4,18 +4,6 @@ title: Manhole Boxes
 cover_image: manhole-cover.png
 sections:
   - heading: Introduction
-    body: |-
-
-      I have extensive experience in Docker, K8s, Jenkins, Ansible, Terraform and more.  I has worked in a wide breadth of companies across a variety of industries ranging from small gaming companies to large financial institutions, and have experience at every level of the software development lifecycle.  I can help empower your team to succeed.
-
-      | Hello world | Does this work? | No not really... |
-
-      | Syntax | Description |
-      | --- | ----------- |
-      | Header | Title |
-      | Paragraph | Text |
-      cheese its
-  - heading: Introduction
     body: >-
       Health and safety legislation states that construction equipment users
       should formulate a site

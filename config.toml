@@ -1,6 +1,6 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://tourmaline-clafoutis-8f53da.netlify.app'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Microsite Testing'
 [markup]
   [markup.goldmark]
     [markup.goldmark.extensions]

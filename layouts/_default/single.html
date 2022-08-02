@@ -1,34 +1,36 @@
 {{ define "main" }}
 {{ partial "header.html" }}
-<section class="guideHeader" id="frontPage" name="Cover">
-  <div class="generationBanner">
-    <p class="generationName">Generation</p>
-  </div>
-  <h1><span class="productName">{{ .Title }}</span> Something, something guide</h1>
-  <img src='{{ $.Param "cover_image" }}' alt="">
-</section>
-{{ range $section := .Params.sections }}
-  <section id="{{ $section.heading }}" name="{{ $section.heading }}">
-    <h2>{{ $section.heading }}</h2>
-    {{ if $section.body }}
-      {{ $section.body | markdownify }}
-    {{ end }}
-
-    {{ if $section.image_steps }}
-      <div class="contentImageStepsContainer">
-        {{ range $image_step := $section.image_steps }}
-          <div class="contentImageSteps">
-            <img src="{{ $image_step.image }}" alt="Handrail" />
-            <div>
-              <h3>{{ $image_step.heading }}</h3>
-              <p>{{ $image_step.paragraph }}</p>
-            </div>
-          </div>
-        {{ end }}
-      </div>
-    {{ end }}
+<main>
+  <section class="guideHeader" id="frontPage" name="Cover">
+    <div class="generationBanner">
+      <p class="generationName">Generation</p>
+    </div>
+    <h1><span class="productName">{{ .Title }}</span> Something, something guide</h1>
+    <img src='{{ $.Param "cover_image" }}' alt="">
   </section>
-{{ end }}
-{{ partial "branches.html" }}
+  {{ range $section := .Params.sections }}
+    <section id="{{ $section.heading }}" name="{{ $section.heading }}">
+      <h2>{{ $section.heading }}</h2>
+      {{ if $section.body }}
+        {{ $section.body | markdownify }}
+      {{ end }}
+
+      {{ if $section.image_steps }}
+        <div class="contentImageStepsContainer">
+          {{ range $image_step := $section.image_steps }}
+            <div class="contentImageSteps">
+              <img src="{{ $image_step.image }}" alt="Handrail" />
+              <div>
+                <h3>{{ $image_step.heading }}</h3>
+                <p>{{ $image_step.paragraph }}</p>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </section>
+  {{ end }}
+  {{ partial "branches.html" }}
+</main>
 {{ partial "footer.html" }}
 {{ end }}
