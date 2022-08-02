@@ -10,5 +10,32 @@
   <body>
     <!-- Include the script that builds the page and powers Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script src="https://sharadcodes.github.io/hugo-shortcodes-netlify-cms/dist/hugo_shortcodes_netlify_cms.js"></script>
+    <script type="text/javascript">
+      CMS.registerEditorComponent({
+        id: "image_Grid",
+        label: "Image Grid",
+        fields: [
+            {
+                name: "image_src",
+                label: "Image",
+                widget: "image"
+            },
+        ],
+        pattern: /{{< imagegrid src="(.*?)" title="(.*?)" >}}/,
+        fromBlock: function(match) {
+            return {
+                title: match[1],
+                src: match[2],
+            };
+        },
+        toBlock: function(obj) {
+            return `{{< imagegrid src="${obj.src}" title="${obj.title}" >}}`;
+        },
+        toPreview: function(obj) {
+            return `<img src=${obj.src} alt=${obj.title} />`;
+        },
+      });
+    </script>
   </body>
 </html>

@@ -7,6 +7,9 @@ media_library:
   name: uploadcare
   config:
     publicKey: 7b24509310ddb9c7d9fb
+  settings:
+    autoFilename: true
+    defaultOperations: '/resize/800x600/'
 
 collections:
   - name: 'guide'
