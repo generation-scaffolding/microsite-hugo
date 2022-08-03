@@ -427,6 +427,7 @@ table td{
 .imageGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
 }
 
 @media only screen and (min-width: 500px){

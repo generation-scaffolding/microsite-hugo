@@ -8,8 +8,6 @@ media_library:
   config:
     publicKey: 7b24509310ddb9c7d9fb
     imagesOnly: true
-  settings:
-    autoFilename: false
 
 collections:
   - name: 'guide'
