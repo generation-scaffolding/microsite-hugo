@@ -426,8 +426,9 @@ table td{
 
 .imageGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   grid-gap: 12px;
+  margin-bottom: 24px;
 }
 
 @media only screen and (min-width: 500px){
@@ -473,6 +474,10 @@ table td{
   }
   .flexboxFooter ul{
     max-width:150px;
+  }
+
+  .imageGrid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
 }
